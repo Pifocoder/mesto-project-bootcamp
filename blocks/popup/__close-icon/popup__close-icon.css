@@ -1,0 +1,24 @@
+.popup__close-icon {
+    position: fixed;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../images/popup/popup__close-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    border: 0px;
+    right: calc((100% - 282px) / 2);
+    top: calc((100% - 322px) / 2 - 30px);
+}
+.popup__close-icon:hover {
+    background-image: url(../../../images/popup/popup__close-icon-hover.png);
+}
+@media screen and (min-width: 1280px) {
+    .popup__close-icon {
+            width: 32px;
+            height: 32px;
+            right: calc((100% - 430px) / 2 - 32px);
+            top: calc((100% - 330px) / 2 - 32px);
+        }
+}

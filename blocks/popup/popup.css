@@ -1,0 +1,16 @@
+.popup {
+    content: "";
+    display: none;/*flex*/
+    z-index: 2;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+}
+.popup::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.5;
+}

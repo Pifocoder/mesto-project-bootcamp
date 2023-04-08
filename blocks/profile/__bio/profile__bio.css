@@ -1,0 +1,39 @@
+.profile__bio {
+    width: 100%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    color: #FFFFFF;
+}
+@media screen and (min-width: 320px) {
+    .profile__bio {
+            margin: 0px auto;
+            margin-top: 8px;
+        }
+}
+@media screen and (min-width: 768px) {
+    .profile__bio {
+            text-align: left;
+            margin-top: 8px;
+            margin-left: 0px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+}
+@media screen and (min-width: 1280px) {
+    .profile__bio {
+            text-align: left;
+            margin-top: 8px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+}

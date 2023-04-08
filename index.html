@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body>
+  <div class="page">
+    <div class="popup">
+      <button class="popup__close-icon"></button>
+      <div class="popup__container">
+        <form class="popup__form">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__item" name="profile-name" value="Жак-Ив Кусто">
+          <input type="text" class="popup__item" name="profile-bio" value="Исследователь океана">
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <section class="header">
+        <img class="header__logo" src="images/header/header__logo.png">
+        <img class="header__line" src="images/line.png">
+    </section>
+    <section class="profile">
+        <img class="profile__avatar" src="images/image.png">
+        <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button"></button>
+            <p class="profile__bio">Исследователь океана</p>
+        </div>
+        <button class="profile__add-button">
+        </button>
+    </section>
+    <section class="gallery">
+      <div class="gallery__card">
+        <img class="gallery__photo" src="images/gallery/Санкт-Петербург.jpg" alt="Санкт-Петербург">
+        <div class="gallery__info">
+          <h2 class="gallery__name">Санкт-Петербург</h2>
+          <button class="gallery__icon"></button>
+        </div>
+      </div>
+      <div class="gallery__card">
+        <img class="gallery__photo" src="images/gallery/Парадная Питера.jpg" alt="Парадная Питера">
+        <div class="gallery__info">
+          <h2 class="gallery__name">Парадная Питера</h2>
+          <button class="gallery__icon"></button>
+        </div>
+      </div>
+      <div class="gallery__card">
+        <img class="gallery__photo" src="images/gallery/Комарово.jpg" alt="Комарово">
+        <div class="gallery__info">
+          <h2 class="gallery__name">Комарово</h2>
+          <button class="gallery__icon"></button>
+        </div>
+      </div>
+      <div class="gallery__card">
+        <img class="gallery__photo" src="images/gallery/Ладожские шхеры.jpg" alt="Ладожские шхеры">
+        <div class="gallery__info">
+          <h2 class="gallery__name">Ладожские шхеры</h2>
+          <button class="gallery__icon"></button>
+        </div>
+      </div>
+      <div class="gallery__card">
+        <img class="gallery__photo" src="images/gallery/Сахалин.jpg" alt="Сахалин">
+        <div class="gallery__info">
+          <h2 class="gallery__name">Сахалин</h2>
+          <button class="gallery__icon"></button>
+        </div>
+      </div>
+      <div class="gallery__card">
+        <img class="gallery__photo" src="images/gallery/Каппадокия.jpg" alt="Каппадокия">
+        <div class="gallery__info">
+          <h2 class="gallery__name">Каппадокия</h2>
+          <button class="gallery__icon"></button>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <p class="footer__text">© 2020 Mesto Russia</p>
+    </section>
+  </div>
+</body>
+</html>
