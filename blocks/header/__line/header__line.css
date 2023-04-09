@@ -2,7 +2,7 @@
     .header__line {
             margin-top: 26px;
             margin-left: calc((100% - 100vw) / 2);
-            width: 100vw;
+            width: 99vw;
         }
 }
 @media screen and (min-width: 768px) {
