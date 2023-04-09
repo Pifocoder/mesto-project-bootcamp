@@ -1,7 +1,7 @@
 .profile__bio {
     width: 100%;
 
-    font-family: 'Inter';
+    font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -23,16 +23,7 @@
 @media screen and (min-width: 768px) {
     .profile__bio {
             text-align: left;
-            margin-top: 8px;
             margin-left: 0px;
-            font-size: 18px;
-            line-height: 22px;
-        }
-}
-@media screen and (min-width: 1280px) {
-    .profile__bio {
-            text-align: left;
-            margin-top: 8px;
             font-size: 18px;
             line-height: 22px;
         }

@@ -18,10 +18,6 @@
 }
 @media screen and (min-width: 1280px) {
     .profile {
-            margin: 0px auto;
-            margin-top: 37px;
-            width: 69%;
             grid-template-columns: min-content auto min-content;
-            grid-column-gap: 31px;
         }
 }
