@@ -1,4 +1,6 @@
 .profile__bio {
+    margin: 0px auto;
+    margin-top: 8px;
     width: 100%;
 
     font-family: 'Inter', Arial, sans-serif;
@@ -13,12 +15,6 @@
     overflow: hidden;
 
     color: #FFFFFF;
-}
-@media screen and (min-width: 320px) {
-    .profile__bio {
-            margin: 0px auto;
-            margin-top: 8px;
-        }
 }
 @media screen and (min-width: 768px) {
     .profile__bio {

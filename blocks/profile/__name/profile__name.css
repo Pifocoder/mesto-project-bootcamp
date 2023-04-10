@@ -12,13 +12,9 @@
     overflow: hidden;
 
     color: #FFFFFF;
-}
-@media screen and (min-width: 320px) {
-    .profile__name {
-            width: 100%;
-            margin-top: 26px;
-            align-self: end;
-        }
+    width: 100%;
+    margin-top: 26px;
+    align-self: end;
 }
 @media screen and (min-width: 768px) {
     .profile__name {
@@ -30,7 +26,6 @@
 }
 @media screen and (min-width: 1280px) {
     .profile__name {
-            text-align: left;
             margin-top: 0px;
         }
 }

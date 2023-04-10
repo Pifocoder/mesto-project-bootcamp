@@ -1,16 +1,18 @@
-@media screen and (min-width: 320px) {
-    .header {
-            margin: 0px auto;
-            width: 83%;
-        }
+.header {
+    margin: 0px auto;
+    width: 83%;
+    padding-bottom: 26px;
+    border-bottom:  1px solid #545454;
 }
 @media screen and (min-width: 768px) {
     .header {
             width: 75%;
+            padding-bottom: 30px;
         }
 }
 @media screen and (min-width: 1280px) {
     .header {
             width: 69%;
+            padding-bottom: 35px;
         }
 }

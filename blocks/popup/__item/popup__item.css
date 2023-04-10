@@ -9,6 +9,6 @@
     line-height: 17px;
     width: 100%;
     border: 0px;
-    border-bottom: 1px solid #9f9f9f;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     color: #000000;
 }

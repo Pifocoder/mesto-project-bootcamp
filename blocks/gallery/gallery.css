@@ -1,7 +1,7 @@
 .gallery {
     display: grid;
     grid-template-columns: auto;
-    grid-row-gap: 20px;
+    grid-row-gap: 21px;
     margin-top: 40px;
 }
 @media screen and (min-width: 768px) {
