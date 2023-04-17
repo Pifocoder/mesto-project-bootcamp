@@ -8,15 +8,33 @@
 </head>
 <body>
   <div class="page">
-    <div class="popup">
-      <div class="popup__container">
-        <button class="popup__close-icon" type="button"></button>
-        <form class="popup__form" name="profile">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" class="popup__item" name="profile-name" value="Жак-Ив Кусто">
-          <input type="text" class="popup__item" name="profile-bio" value="Исследователь океана">
-          <button type="submit" class="popup__button">Сохранить</button>
+    <div class="popup-profile">
+      <div class="popup-profile__container">
+        <button class="popup-profile__close-icon" type="button"></button>
+        <form class="popup-profile__form" name="profile">
+          <h2 class="popup-profile__title">Редактировать профиль</h2>
+          <input type="text" class="popup-profile__item" name="profile-name" value="">
+          <input type="text" class="popup-profile__item" name="profile-bio" value="">
+          <button type="submit" class="popup-profile__button">Сохранить</button>
         </form>
+      </div>
+    </div>
+    <div class="popup-add-card">
+      <div class="popup-add-card__container">
+        <button class="popup-add-card__close-icon" type="button"></button>
+        <form class="popup-add-card__form" name="card-info">
+          <h2 class="popup-add-card__title">Новое место</h2>
+          <input type="text" class="popup-add-card__item" name="card-name" placeholder = "Название" value="">
+          <input type="text" class="popup-add-card__item" name="card-link" placeholder = "Ссылка на картинку" value="">
+          <button type="submit" class="popup-add-card__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-card__container">
+        <button class="popup-card__close-icon" type="button"></button>
+        <img class="popup-card__photo" src="#" alt="Картинка">
+        <p class="popup-card__name"></p>
       </div>
     </div>
     <header class="header">
@@ -34,53 +52,24 @@
           </button>
       </section>
       <section class="gallery">
-        <div class="gallery__card">
-          <img class="gallery__photo" src="images/gallery/piter.jpg" alt="Санкт-Петербург">
-          <div class="gallery__info">
-            <h2 class="gallery__name">Санкт-Петербург</h2>
-            <button class="gallery__icon" type="button"></button>
+        <template id="gallery__card">
+          <div class="gallery__card">
+            <button class="gallery__delete-card" type="button"></button>
+            <button class="gallery__photo-area">
+              <img class="gallery__photo">
+            </button>
+            <div class="gallery__info">
+              <h2 class="gallery__name"></h2>
+              <button class="gallery__icon" type="button"></button>
+            </div>
           </div>
-        </div>
-        <div class="gallery__card">
-          <img class="gallery__photo" src="images/gallery/paradnia.jpg" alt="Парадная Питера">
-          <div class="gallery__info">
-            <h2 class="gallery__name">Парадная Питера</h2>
-            <button class="gallery__icon" type="button"></button>
-          </div>
-        </div>
-        <div class="gallery__card">
-          <img class="gallery__photo" src="images/gallery/komarovo.jpg" alt="Комарово">
-          <div class="gallery__info">
-            <h2 class="gallery__name">Комарово</h2>
-            <button class="gallery__icon" type="button"></button>
-          </div>
-        </div>
-        <div class="gallery__card">
-          <img class="gallery__photo" src="images/gallery/shheri.jpg" alt="Ладожские шхеры">
-          <div class="gallery__info">
-            <h2 class="gallery__name">Ладожские шхеры</h2>
-            <button class="gallery__icon" type="button"></button>
-          </div>
-        </div>
-        <div class="gallery__card">
-          <img class="gallery__photo" src="images/gallery/sahalin.jpg" alt="Сахалин">
-          <div class="gallery__info">
-            <h2 class="gallery__name">Сахалин</h2>
-            <button class="gallery__icon" type="button"></button>
-          </div>
-        </div>
-        <div class="gallery__card">
-          <img class="gallery__photo" src="images/gallery/cappadokia.jpg" alt="Каппадокия">
-          <div class="gallery__info">
-            <h2 class="gallery__name">Каппадокия</h2>
-            <button class="gallery__icon" type="button"></button>
-          </div>
-        </div>
+        </template>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+.popup-card__close-icon {
+    position: absolute;
+    top: -22px;
+    right: 0px;
+
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../images/popup/popup__close-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0); 
+    border: 0px;
+}
+.popup-card__close-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+    .popup-card__close-icon {
+            width: 32px;
+            height: 32px;
+            top: -36px;
+            right: -36px;
+        }
+}

@@ -14,7 +14,7 @@
     opacity: 0.5;
     cursor: pointer;
 }
-.gallery__icon:active {
+.gallery__icon_active {
     background-image: url(../../../images/gallery/gallery__heart-active.svg);
     opacity: 1;
 }

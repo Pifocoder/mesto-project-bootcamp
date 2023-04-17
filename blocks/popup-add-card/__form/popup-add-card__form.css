@@ -1,0 +1,10 @@
+.popup-add-card__form {
+    margin: 0px auto;
+    margin-top: 27px;
+    width: 84%;
+}
+@media screen and (min-width: 1280px) {
+    .popup-add-card__form {
+            width: 84%;
+        }
+}
