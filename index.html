@@ -8,31 +8,31 @@
 </head>
 <body>
   <div class="page">
-    <div class="popup-profile">
+    <div class="popup popup-profile popup_close">
       <div class="popup-profile__container">
-        <button class="popup-profile__close-icon" type="button"></button>
-        <form class="popup-profile__form" name="profile">
-          <h2 class="popup-profile__title">Редактировать профиль</h2>
-          <input type="text" class="popup-profile__item" name="profile-name" value="">
-          <input type="text" class="popup-profile__item" name="profile-bio" value="">
-          <button type="submit" class="popup-profile__button">Сохранить</button>
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form popup-profile__form" name="profile">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__item" name="profile-name" value="">
+          <input type="text" class="popup__item" name="profile-bio" value="">
+          <button type="submit" class="popup__button popup-profile__button">Сохранить</button>
         </form>
       </div>
     </div>
-    <div class="popup-add-card">
+    <div class="popup popup-add-card popup_close">
       <div class="popup-add-card__container">
-        <button class="popup-add-card__close-icon" type="button"></button>
-        <form class="popup-add-card__form" name="card-info">
-          <h2 class="popup-add-card__title">Новое место</h2>
-          <input type="text" class="popup-add-card__item" name="card-name" placeholder = "Название" value="">
-          <input type="text" class="popup-add-card__item" name="card-link" placeholder = "Ссылка на картинку" value="">
-          <button type="submit" class="popup-add-card__button">Сохранить</button>
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form popup-add-card__form" name="card-info">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" class="popup__item" name="card-name" placeholder = "Название" value="">
+          <input type="text" class="popup__item" name="card-link" placeholder = "Ссылка на картинку" value="">
+          <button type="submit" class="popup__button popup-add-card__button">Сохранить</button>
         </form>
       </div>
     </div>
-    <div class="popup-card">
+    <div class="popup popup-card popup_close">
       <div class="popup-card__container">
-        <button class="popup-card__close-icon" type="button"></button>
+        <button class="popup__close" type="button"></button>
         <img class="popup-card__photo" src="#" alt="Картинка">
         <p class="popup-card__name"></p>
       </div>
@@ -70,6 +70,6 @@
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <script src="script.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
