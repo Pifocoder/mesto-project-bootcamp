@@ -44,47 +44,50 @@ const cardLinkInput = formAddCardElement.querySelector('[name="card-link"]');
 const popupCloseButtons = document.querySelectorAll('.popup__close')
 popupCloseButtons.forEach(element => {
   element.addEventListener('click', () => {
-    element.parentNode.parentElement.classList.add('popup_close');
+    element.parentNode.parentElement.classList.remove('popup_opened');
   })
 });
+function createCard(name, link) {
+  let imageElement = imageTemplate.querySelector('.gallery__card').cloneNode(true);
+  imageElement.querySelector('.gallery__name').textContent = name;
+  let imagePhoto = imageElement.querySelector('.gallery__photo');
 
+  imagePhoto.src = link;
+  imagePhoto.alt = name;
+  
+  function deleteCard(item) {
+    item.remove();
+  }
+  imageElement.querySelector('.gallery__delete-card').addEventListener('click',function() {
+    deleteCard(imageElement);
+  });
+
+  function toggleLike(item) {
+    item.classList.toggle('gallery__icon_active');
+  }
+  let imageIcon = imageElement.querySelector('.gallery__icon');
+  imageIcon.addEventListener('click', () => {
+    toggleLike(imageIcon);
+  });
+
+  function photoClick(name, src) {
+    popupPhoto.classList.add('popup_opened');
+    let photoPopup = popupPhoto.querySelector('.popup-card__photo');
+    photoPopup.src = src;
+    photoPopup.alt = name;
+    popupPhoto.querySelector('.popup-card__name').textContent = name;
+  }
+  popupPhoto.querySelector('.popup__close').addEventListener('click', function() {   
+    popupPhoto.classList.remove('popup_opened');
+  });
+  imageElement.querySelector('.gallery__photo-area').addEventListener('click', function() {
+    photoClick(name, link);
+  });
+  return imageElement;
+}
 function addPhoto(name, link) {
-    let imageElement = imageTemplate.querySelector('.gallery__card').cloneNode(true);
-    imageElement.querySelector('.gallery__name').textContent = name;
-    let imagePhoto = imageElement.querySelector('.gallery__photo');
-
-    imagePhoto.src = link;
-    imagePhoto.alt = name;
-    
-    function deleteCard(item) {
-      item.remove();
-    }
-    imageElement.querySelector('.gallery__delete-card').addEventListener('click',function() {
-      deleteCard(imageElement);
-    });
-
-    function toggleLike(item) {
-      item.classList.toggle('gallery__icon_active');
-    }
-    let imageIcon = imageElement.querySelector('.gallery__icon');
-    imageIcon.addEventListener('click', () => {
-      toggleLike(imageIcon);
-    });
-
-    function photoClick(name, src) {
-      popupPhoto.classList.remove('popup_close');
-      
-      popupPhoto.querySelector('.popup-card__photo').src = src;
-      popupPhoto.querySelector('.popup-card__name').textContent = name;
-      popupPhoto.querySelector('.popup__close').addEventListener('click', function() {   
-        popupPhoto.classList.add('popup_close');
-      });
-    }
-    imageElement.querySelector('.gallery__photo-area').addEventListener('click', function() {
-      photoClick(name, link);
-    });
-
-    galleryBlock.prepend(imageElement);
+  imageElement = createCard(name, link);
+  galleryBlock.prepend(imageElement);
 }
 function updatePhotos() {
     for (let item = initialCards.length - 1; item >= 0; --item) {
@@ -98,7 +101,7 @@ editProfileButton.addEventListener('click', function() {
     nameInput.value = profileName.textContent;
     bioInput.value = profileBio.textContent;
 
-    profilePopup.classList.remove('popup_close');
+    profilePopup.classList.add('popup_opened');
 });
 
 function handleProfileFormSubmit(evt) {
@@ -107,12 +110,12 @@ function handleProfileFormSubmit(evt) {
   profileName.textContent = nameInput.value;
   profileBio.textContent = bioInput.value;
 
-  profilePopup.classList.add('popup_close');  
+  profilePopup.classList.remove('popup_opened');
 }
 formProfileElement.addEventListener('submit', handleProfileFormSubmit);
 
 addCardButton.addEventListener('click', function() {
-  addButtonPopup.classList.remove('popup_close');
+  addButtonPopup.classList.add('popup_opened');
 });
 
 
@@ -122,7 +125,7 @@ function handleAddCardFormSubmit(evt) {
   addPhoto(cardNameInput.value, cardLinkInput.value);
   cardNameInput.value = "";
   cardLinkInput.value = "";
-  addButtonPopup.classList.add('popup_close');
+  addButtonPopup.classList.remove('popup_opened');
 }
 formAddCardElement.addEventListener('submit', handleAddCardFormSubmit);
 
