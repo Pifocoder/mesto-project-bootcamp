@@ -1,0 +1,7 @@
+.gallery__card {
+    position: relative;
+    width: 282px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    justify-self: center;
+}

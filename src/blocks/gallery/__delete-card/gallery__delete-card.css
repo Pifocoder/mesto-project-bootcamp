@@ -1,0 +1,20 @@
+.gallery__delete-card {
+    position: absolute;
+    z-index: 1;
+
+    background-image: url(../../../images/gallery/trash.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0); 
+    border: 0px;
+
+    height: 19px;
+    width: 18px;
+    top: 20px;
+    right: 20px
+}
+.gallery__delete-card:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

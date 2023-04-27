@@ -1,0 +1,20 @@
+.gallery__icon {
+    background-image: url(../../../images/gallery/gallery__heart-disable.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+
+    align-self: center;
+
+    height: 19px;
+    width: 22px;
+    border: 0px;
+}
+.gallery__icon:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.gallery__icon_active {
+    background-image: url(../../../images/gallery/gallery__heart-active.svg);
+    opacity: 1;
+}

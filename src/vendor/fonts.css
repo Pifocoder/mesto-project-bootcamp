@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url(../fonts/Inter-Regular.otf) format("otf"),
+        url(../fonts/MiConv.com__Inter-Regular.woff) format("woff");
+
+}
+@font-face {
+    font-family: "Inter";
+    font-weight: 900;
+    src: url(../fonts/Inter-Black.otf) format("otf"),
+        url(../fonts/MiConv.com__Inter-Black.woff) format("woff");
+}
+@font-face {
+    font-family: "Inter";
+    font-weight: 500;
+    src: url(../fonts/Inter-Medium.otf) format("otf"),
+        url(../fonts/MiConv.com__Inter-Medium.woff) format("woff");
+}

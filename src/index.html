@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+</head>
+<body>
+  <div class="page">
+    <div class="popup popup-profile">
+      <div class="popup__container popup-profile__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form popup-profile__form" name="profile">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__item" name="profile-name" value="" required minlength="2" maxlength="40">
+          <span class="popup__item_type_error profile-name-popup__item_type_error"></span>
+          <input type="text" class="popup__item" name="profile-bio" value="" required minlength="2" maxlength="200">
+          <span class="popup__item_type_error profile-bio-popup__item_type_error"></span>
+          <button type="submit" class="popup__button popup-profile__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup-add-card">
+      <div class="popup__container popup-add-card__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form popup-add-card__form" name="card-info">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" class="popup__item" name="card-name" placeholder = "Название" value="" required minlength="2" maxlength="30">
+          <span class="popup__item_type_error card-name-popup__item_type_error"></span>
+          <input type="url" class="popup__item" name="card-link" placeholder = "Ссылка на картинку" value="" required>
+          <span class="popup__item_type_error card-link-popup__item_type_error"></span>
+          <button type="submit" class="popup__button popup-add-card__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup-card">
+      <div class="popup__container popup-card__container">
+        <button class="popup__close" type="button"></button>
+        <img class="popup-card__photo" src="#" alt="Картинка">
+        <p class="popup-card__name"></p>
+      </div>
+    </div>
+    <header class="header">
+        <img class="header__logo" src="<%=require('./images/header/header__logo.svg')%>" alt="Логотип">
+    </header>
+    <main>
+      <section class="profile">
+          <img class="profile__avatar" src="<%=require('./images/image.png')%>" alt="Профиль">
+          <div class="profile__info">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+              <p class="profile__bio">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button" type="button">
+          </button>
+      </section>
+      <section class="gallery">
+        <template id="gallery__card">
+          <div class="gallery__card">
+            <button class="gallery__delete-card" type="button"></button>
+            <button class="gallery__photo-area">
+              <img class="gallery__photo">
+            </button>
+            <div class="gallery__info">
+              <h2 class="gallery__name"></h2>
+              <button class="gallery__icon" type="button"></button>
+            </div>
+          </div>
+        </template>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">© 2020 Mesto Russia</p>
+    </footer>
+  </div>
+</body>
+</html>
