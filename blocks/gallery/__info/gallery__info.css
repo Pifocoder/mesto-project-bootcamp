@@ -1,6 +1,0 @@
-.gallery__info {
-    display: grid;
-    grid-template-columns: auto min-content;
-    width: 85%;
-    margin: 0px auto;
-}
