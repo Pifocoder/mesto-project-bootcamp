@@ -3,6 +3,7 @@ export { addCard, renderCards }
 
 const popupPhoto = document.querySelector('.popup-card');
 const photoPopup = popupPhoto.querySelector('.popup-card__photo');
+const photoName = popupPhoto.querySelector('.popup-card__name');
 const galleryBlock = document.querySelector('.gallery');
 const imageTemplate = document.querySelector('#gallery__card').content;
 
@@ -34,7 +35,7 @@ function createCard(name, link) {
   
       photoPopup.src = src;
       photoPopup.alt = name;
-      popupPhoto.querySelector('.popup-card__name').textContent = name;
+      photoName.textContent = name;
     }
     imageElement.querySelector('.gallery__photo-area').addEventListener('click', function() {
       clickPhoto(name, link);

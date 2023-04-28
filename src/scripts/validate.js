@@ -25,8 +25,10 @@ function hasInvalidInput(inputList) {
 const checkButtonSubmit = function(formInputs, submitButton, inactiveButtonClass) {
     if (hasInvalidInput(formInputs)) {
         submitButton.classList.add(inactiveButtonClass);
+        submitButton.setAttribute('disabled', 'disabled');
     } else {
         submitButton.classList.remove(inactiveButtonClass);
+        submitButton.removeAttribute('disabled', 'disabled');
     }
 }
 function enableValidation(data) {

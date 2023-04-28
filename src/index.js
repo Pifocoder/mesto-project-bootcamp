@@ -29,12 +29,16 @@ const initialCards = [
   
 import { renderCards } from './scripts/card.js'
 import { openPopup, renderCloseButtons, setProfileFormStartInfo, addFormProfileElementListener, addFormAddCardListener, addPopupsListeners} from './scripts/modal.js'
+import { enableValidation } from './scripts/validate.js'
+
+const profilePopup =  document.querySelector('.popup-profile');
+const editProfileButton = document.querySelector('.profile__edit-button');
+const addCardButton = document.querySelector('.profile__add-button');
+const addButtonPopup = document.querySelector('.popup-add-card');
 
 renderCards(initialCards);
 renderCloseButtons();
 
-const profilePopup =  document.querySelector('.popup-profile');
-const editProfileButton = document.querySelector('.profile__edit-button');
 setProfileFormStartInfo();
 editProfileButton.addEventListener('click', function() {
     setProfileFormStartInfo();
@@ -43,13 +47,10 @@ editProfileButton.addEventListener('click', function() {
 addFormProfileElementListener()
 addFormAddCardListener();
 
-const addCardButton = document.querySelector('.profile__add-button');
-const addButtonPopup = document.querySelector('.popup-add-card');
 addCardButton.addEventListener('click', function() {
     openPopup(addButtonPopup);
 });
 
-import { enableValidation } from './scripts/validate.js'
 enableValidation({
     formSelector: '.popup__form',
     inputSelector: '.popup__item',
