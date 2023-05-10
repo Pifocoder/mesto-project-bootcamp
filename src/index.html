@@ -33,6 +33,17 @@
         </form>
       </div>
     </div>
+    <div class="popup popup-update-avatar">
+      <div class="popup__container  popup-update-avatar__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form popup-update-avatar__form" name="update-avatar">
+          <h2 class="popup__title">Обновить аватар</h2>
+          <input type="url" class="popup__item" name="avatar-link" placeholder = "Ссылка на фото" value="" required>
+          <span class="popup__item_type_error avatar-link-popup__item_type_error"></span>
+          <button type="submit" class="popup__button popup-update-avatar__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
     <div class="popup popup-card">
       <div class="popup__container popup-card__container">
         <button class="popup__close" type="button"></button>
@@ -45,7 +56,10 @@
     </header>
     <main>
       <section class="profile">
-          <img class="profile__avatar" src="<%=require('./images/image.png')%>" alt="Профиль">
+          <div class="profile__avatar-area">
+            <img class="profile__avatar" src="<%=require('./images/image.png')%>" alt="Профиль">
+            <img class="profile__avatar-edit" src="<%=require('./images/profile/image__edit.svg')%>" alt="Изменить">
+          </div>
           <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <button class="profile__edit-button" type="button"></button>
@@ -63,7 +77,10 @@
             </button>
             <div class="gallery__info">
               <h2 class="gallery__name"></h2>
-              <button class="gallery__icon" type="button"></button>
+              <div class="gallery__reaction">
+                <button class="gallery__icon" type="button"></button>
+                <p class="gallery__likes-number"></p>
+              </div>
             </div>
           </div>
         </template>
