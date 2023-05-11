@@ -6,6 +6,12 @@ const config = {
         'Content-Type': 'application/json'
     }
 }
+function getResponseData(result) {
+    if (!result.ok) {
+        return Promise.reject(`Ошибка: ${res.status}`); 
+    }
+    return result.json();
+}
 
 function updateProfileInfo(name, about) {
     return fetch(`${config.baseUrl}/users/me`, {
@@ -17,10 +23,7 @@ function updateProfileInfo(name, about) {
         })
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     })
 }
 
@@ -30,7 +33,7 @@ function getProfileInfo() {
         headers: config.headers,
     })
     .then((result) => {
-        return result.json()
+        return getResponseData(result);
     })
 }
 
@@ -40,10 +43,7 @@ function getCards() {
         headers: config.headers,
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     });
 }
 
@@ -53,10 +53,7 @@ function unregisterCard(cardId) {
         headers: config.headers,
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     });
 }
 function registerCard(name, link) {
@@ -69,10 +66,7 @@ function registerCard(name, link) {
         })
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     });
 }
 function addReaction(cardId) {
@@ -81,10 +75,7 @@ function addReaction(cardId) {
         headers: config.headers,
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     });
 }
 function removeReaction(cardId) {
@@ -93,10 +84,7 @@ function removeReaction(cardId) {
         headers: config.headers,
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     });
 }
 
@@ -109,9 +97,6 @@ function updateProfileAvatar(avatarUrl) {
         })
     })
     .then((result) => {
-        if (result.ok) {
-            return result.json()
-        }
-        return Promise.reject(`Ошибка: ${result.status}`);
+        return getResponseData(result);
     });
 }

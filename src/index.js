@@ -58,31 +58,22 @@ const profileBio = document.querySelector('.profile__bio');
 
 import { getProfileInfo, getCards } from './scripts/api.js'
 
+
 let thisUser;
-function initProfile() {
-  getProfileInfo()
-  .then((result) => {
-    thisUser = result;
-    profileName.textContent = result["name"];
-    profileBio.textContent = result["about"];
-    setProfileAvatar(result["avatar"]);
-    //profileAvatar.src = result[""]
+function init() {
+  Promise.all([
+    getProfileInfo(), 
+    getCards()
+  ]) 
+  .then(([info, initialCards])=>{
+    thisUser = info;
+    profileName.textContent = info["name"];
+    profileBio.textContent = info["about"];
+    setProfileAvatar(info["avatar"]);
+    renderCards(initialCards, thisUser);
+  }) 
+  .catch((error)=>{
+    console.log(error);
   })
 }
-
-initProfile();
-
-
-function initGallery() {
-  getCards()
-  .then((result) => {
-    renderCards(result, thisUser);
-  })
-  .catch((reason) => {
-    console.log(reason);
-  })
-}
-initGallery();
-// getProfileInfo();
-// updateProfileData('Andrey','I would like to finish mapku');
-// console.log(getProfileInfo());
+init();

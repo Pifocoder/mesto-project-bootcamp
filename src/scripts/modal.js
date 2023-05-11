@@ -15,6 +15,7 @@ const closeButtons = document.querySelectorAll('.popup__close');
 const formAddCardElement = document.querySelector('.popup-add-card__form');
 const cardNameInput = formAddCardElement.querySelector('[name="card-name"]');
 const cardLinkInput = formAddCardElement.querySelector('[name="card-link"]');
+const addCardSubmit = formAddCardElement.querySelector('.popup__button');
 const addButtonPopup = document.querySelector('.popup-add-card');
 const popups = document.querySelectorAll('.popup');
 
@@ -35,7 +36,6 @@ function renderCloseButtons() {
 function setProfileFormStartInfo() {
     nameInput.value = profileName.textContent;
     bioInput.value = profileBio.textContent;
-    buttonProfileSubmit.textContent = "Сохранить";
 }
 
 import { updateProfileInfo } from './api.js'
@@ -51,24 +51,29 @@ function addFormProfileElementListener() {
         })
         .catch((reason) => {
             console.log(reason);
-            closePopup(profilePopup);
         })
+        .finally(() => {
+            evt.target.reset();
+            buttonProfileSubmit.textContent = "Сохранить";
+        });
     })
 }
 
 function addFormAddCardListener() {
     formAddCardElement.addEventListener('submit', (evt) => {
         evt.preventDefault();
+        addCardSubmit.textContent = "Сохраниение..."
         registerCard(cardNameInput.value, cardLinkInput.value)
         .then((result) => {
             addCard(result, result.owner);
+            closePopup(addButtonPopup);
         })
         .catch((reason) => {
             console.log(reason);
         })
-        .then(() => {
+        .finally(() => {
             evt.target.reset();
-            closePopup(addButtonPopup);
+            addCardSubmit.textContent = "Сохранить"
         })
     })
 }
@@ -84,12 +89,16 @@ function addUpdateProfileAvatarListener() {
         evt.preventDefault();
         formUpdateAvatarSubmit.textContent = "Сохранение...";
         updateProfileAvatar(formUpdateAvatarUrl.value)
+        .then(()=> {
+            setProfileAvatar(formUpdateAvatarUrl.value);
+            closePopup(popupUpdateAvatar);
+        })
         .catch((reason) => {
             console.log(reason);
         })
-        .then(() => {
-            setProfileAvatar(formUpdateAvatarUrl.value);
-            closePopup(popupUpdateAvatar);
+        .finally(() => {
+            evt.target.reset();
+            formUpdateAvatarSubmit.textContent = "Сохранить";
         })
     })
 }

@@ -18,11 +18,10 @@ function createCard(card, thisUser) {
     numberOfLikes.textContent = card.likes.length;
     imagePhoto.src = card.link;
     imagePhoto.alt = card.name;
-    imageElement.dataset.cardId = card._id;
+    imageElement.id = card._id;
 
     function deleteCard(item) {
-;
-      unregisterCard(item.dataset.cardId)
+      unregisterCard(item.id)
       .then(()=>{
         item.remove();
       })
@@ -52,7 +51,7 @@ function createCard(card, thisUser) {
     }
     imageIcon.addEventListener('click', () => {
       if (imageIcon.classList.contains('gallery__icon_active')) {
-        removeReaction(imageElement.dataset.cardId)
+        removeReaction(imageElement.id)
         .then((result) => {
           numberOfLikes.textContent = result.likes.length;
           toggleLike(imageIcon);
@@ -61,7 +60,7 @@ function createCard(card, thisUser) {
           console.log(reason);
         })
       } else {
-        addReaction(imageElement.dataset.cardId)
+        addReaction(imageElement.id)
         .then((result) => {
           numberOfLikes.textContent = result.likes.length;
           toggleLike(imageIcon);
